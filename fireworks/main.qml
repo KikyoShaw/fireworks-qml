@@ -21,9 +21,9 @@ import QtMultimedia 5.9
 
 Window {
     visible: true
-    width: 800
-    height: 530
-    title: qsTr("Hello World")
+    width: 950
+    height: 510
+    title: qsTr("想陪你跨年看烟火")
 
     color: "black"
 
@@ -34,9 +34,24 @@ Window {
 
     Image {
         anchors.fill: parent
-        source: "qrc:/back.jpg"
+        source: "qrc:/bg.jpg"
     }
 
+	Text{
+		x: 45
+		width: 860
+		height: 500
+		text:"在这个世上，缘分总是来回兜转，我们终会于千万人之中，遇见我们所遇见的人，亦终会于千万年之中，在时间的无涯的荒野中，没有早一步，也没有晚一步，遇见你，那也没有什么别的可说，唯有轻轻地问一句，哦 你也在这里吗？"
+		font.family: "Corbel"
+		color: "#808080"
+		font.pixelSize: 21
+		font.bold: true
+		smooth:true
+		horizontalAlignment: Text.AlignHCenter
+		verticalAlignment: Text.AlignBottom
+		wrapMode: Text.WordWrap
+	}
+	
     ParticleSystem {
         id: particles
         anchors.fill: parent
@@ -50,7 +65,7 @@ Window {
 
         Emitter {
             id: burstEmitter
-            x: 400 ; y: 480
+            x: 500 ; y: 480
             group: "stage1"
             emitRate: 1; lifeSpan: 1500;
             size: 50; endSize: 10; sizeVariation: 30
@@ -68,7 +83,7 @@ Window {
         TrailEmitter {
             group: "stage2"; follow: "stage1"
             emitRatePerParticle: 100; lifeSpan: 2400
-            lifeSpanVariation: 400
+            lifeSpanVariation: 500
             acceleration: PointDirection {y: -60 }
             velocity: AngleDirection{angle: 270; magnitude: 40;
                 angleVariation: 22; magnitudeVariation: 5}
